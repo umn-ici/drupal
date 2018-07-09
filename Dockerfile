@@ -1,6 +1,7 @@
 FROM drupal:8-apache
 
 RUN apt-get update && \
+  apt-get install -y gnupg && \
   (curl -sL https://deb.nodesource.com/setup_8.x | bash -) && \
   apt-get install -y git-core mysql-client nodejs \
     imagemagick libbz2-dev libc-client-dev libfreetype6-dev libgmp-dev libgpgme11-dev libjpeg62-turbo-dev libkrb5-dev libldap2-dev libldb-dev libmagickwand-dev libmcrypt-dev libmemcached-dev libpng-dev libpspell-dev libssh2-1-dev libtidy-dev libxml2-dev libxslt-dev libyaml-dev && \
