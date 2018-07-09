@@ -11,9 +11,9 @@ RUN apt-get update && \
 
 RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl && \
   docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
-  docker-php-ext-install bcmath calendar dba exif gd gettext gmp imap ldap mbstring mcrypt pcntl pdo pdo_mysql pspell shmop soap sockets sysvmsg sysvsem sysvshm tidy wddx xmlrpc xsl && \
-  (echo '' | pecl install apcu gnupg igbinary imagick memcached oauth propro raphf ssh2-alpha xdebug yaml) && \
-  docker-php-ext-enable apcu gnupg igbinary imagick memcached oauth propro raphf ssh2 xdebug yaml && \
+  docker-php-ext-install bcmath calendar dba exif gd gettext gmp imap ldap mbstring pcntl pdo pdo_mysql pspell shmop soap sockets sysvmsg sysvsem sysvshm tidy wddx xmlrpc xsl && \
+  (echo '' | pecl install apcu gnupg igbinary imagick mcrypt-1.0.1 memcached oauth propro raphf ssh2-alpha xdebug yaml) && \
+  docker-php-ext-enable apcu gnupg igbinary imagick mcrypt memcached oauth propro raphf ssh2 xdebug yaml && \
   (echo '' | pecl install pecl_http) && \
   docker-php-ext-enable http && \
   ln -s /usr/sbin/composer.phar /usr/sbin/composer && \
