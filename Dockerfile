@@ -17,6 +17,6 @@ RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl && \
   (echo '' | pecl install pecl_http) && \
   docker-php-ext-enable http && \
   ln -s /usr/sbin/composer.phar /usr/sbin/composer && \
-  curl https://raw.githubusercontent.com/composer/getcomposer.org/1b137f8bf6db3e79a38a5bc45324414a6b1f9df2/web/installer | php -- --install-dir /usr/sbin --quiet
+  curl https://raw.githubusercontent.com/composer/getcomposer.org/d3e09029468023aa4e9dcd165e9b6f43df0a9999/web/installer | php -- --install-dir /usr/sbin --quiet
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
